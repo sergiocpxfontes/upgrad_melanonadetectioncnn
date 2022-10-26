@@ -34,7 +34,7 @@
 
 To create the CNN model several steps need to be made, from loading the necessary libraries and data to the creation of a sequential CNN and analisys of indicators as accuracy and loss.
 
-The steps will be executed with a [Jupyter Notebook file ](workbook.ipynb) and will follow the order:
+The steps will be executed with a [Jupyter Notebook file ](workbook2.ipynb) and will follow the order:
 
 - Step 0 » Importing the necessary python modules and packages
 - Step 1 » Reading, understanding the data
@@ -81,7 +81,7 @@ Total training paramenters 60 658 729.
   - Training accuracy is of 69% while validation accuracy is 17%.
 - The second model, where augmentation was added, is less affected by overffiting but accuracy reduced to 52% and 13% respectivly
   - The overfitting its not so strong if we see that we have a moderate training loss at the beginning that will gradually decreases when adding training examples and will gradually flatten. 
-- the third model, where imbalance was added, is also less affected by overffiting but accuracy reduced to 52% and 13% respectivly
+- the third model, where imbalance was added, is also less affected by overffiting and training accuracy increased to 55% while validation accuracy dropped to 4%.
   - The overfitting its not so strong if we see that we have a moderate training loss at the beginning that will gradually decreases when adding training examples and will gradually flatten. 
 - Finally we can conclude that the model is not good and needs to be improved. How?
   - Testing other models with diferent number of layers.
