@@ -32,27 +32,63 @@
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 ## Methodology
 
-Before creating the model its necessary to load the dataset using Keras to create the training and validation datasets. 
-Creating the model will require the usage of machine learning (more details on https://en.wikipedia.org/wiki/Machine_learning) and to do so, several steps  need to be made to ensure we understand the data and making sure the dataset is ready to be submited to the algorithms. The steps will be executed with a Jupyter Notebook file and will follow the following order:
+To create the CNN model several steps need to be made, from loading the necessary libraries and data to the creation of a sequential CNN and analisys of indicators as accuracy and loss.
 
-The model is based on a sequential CNN
+The steps will be executed with a Jupyter Notebook file and will follow the order:
 
 - Step 0 » Importing the necessary python modules and packages
 - Step 1 » Reading, understanding the data
 - Step 2 » Creating the dataset
 - Step 3 » Visualize the patial data
 - Step 4 » Creating the first model
-- Step 5 » Predictions and evaluations on the test set
+- Step 5 » Evaluating the first model
+- Step 6 » Add augmentation to enrich the dataset (only on the training set)
+- Step 7 » Creating the second model
+- Step 8 » Evaluating the second model
+- Step 9 » Determine and handle imbalance
+- Step 10 » Creating the third model
+- Step 11 » Evaluating the third model
 
 ## Conclusions
-- Conclusion 1 from the analysis
-- Conclusion 2 from the analysis
-- Conclusion 3 from the analysis
-- Conclusion 4 from the analysis
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+The CNN that was created was sequencial CNN with 18 layers and then reduced to 17 layers since the first layer of the first model is a rescaling and on the second and third layer already apply rescaling on data generation for aumentation and imbalance handling:
 
+ - Rescaling       
+ - Conv 2d     
+ - Activation (relu)
+ - Conv 2d
+ - Activation (relu)  
+ - Max Pooling 2d
+ - Dropout
+ - Conv 2d
+ - Activation (relu)
+ - Conv 2d
+ - Activation (relu)
+ - Max Pooling 2d
+ - Dropout
+ - Flatten
+ - Dense
+ - Activation (relu)
+ - Dropout
+ - Dense
+ - Activation (softmax)
 
+Total training paramenters 60 658 729.
+
+- The first version of the model was clearly overfiting:
+  - The model works very well with training but doesn't handle correctly on new unseen data.
+  - We also saw that the loss is increasing on validation data. 
+  - Training accuracy is of 69% while validation accuracy is 17%.
+- The second model, where augmentation was added, is less affected by overffiting but accuracy reduced to 52% and 13% respectivly
+  - The overfitting its not so strong if we see that we have a moderate training loss at the beginning that will gradually decreases when adding training examples and will gradually flatten. 
+- the third model, where imbalance was added, is also less affected by overffiting but accuracy reduced to 52% and 13% respectivly
+  - The overfitting its not so strong if we see that we have a moderate training loss at the beginning that will gradually decreases when adding training examples and will gradually flatten. 
+- Finally we can conclude that the model is not good and needs to be improved. How?
+  - The number of layers need should be reconsidered to search for better resuts.
+  - We should consider not user dense layers and compare.
+  - The augmentation strategy should to be reviewed
+  - A diferet optimizer should be considerer for comparison purposes.
+  -
 ## Technologies Used
 - library - skimage
 - library - numpy
