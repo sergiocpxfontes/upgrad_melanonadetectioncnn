@@ -75,7 +75,7 @@ The CNN that was created was sequencial CNN with 18 layers and then reduced to 1
 
 Total training paramenters 60 658 729.
 
-- The first version of the model was clearly overfiting:
+- The first version of the model was clearly overffiting:
   - The model works very well with training but doesn't handle correctly on new unseen data.
   - We also saw that the loss is increasing on validation data. 
   - Training accuracy is of 69% while validation accuracy is 17%.
@@ -84,11 +84,13 @@ Total training paramenters 60 658 729.
 - the third model, where imbalance was added, is also less affected by overffiting but accuracy reduced to 52% and 13% respectivly
   - The overfitting its not so strong if we see that we have a moderate training loss at the beginning that will gradually decreases when adding training examples and will gradually flatten. 
 - Finally we can conclude that the model is not good and needs to be improved. How?
-  - The number of layers need should be reconsidered to search for better resuts.
-  - We should consider not user dense layers and compare.
-  - The augmentation strategy should to be reviewed
-  - A diferet optimizer should be considerer for comparison purposes.
-  -
+  - Testing other models with diferent number of layers.
+  - Review the augmentation strategy.
+  - Consider a diferent optimizer.
+  - Consider reducing the number of epochs:
+    - If the model is to complex.
+  - Consider early stopping
+  
 ## Technologies Used
 - library - skimage
 - library - numpy
