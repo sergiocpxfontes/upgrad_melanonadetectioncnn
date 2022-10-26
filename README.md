@@ -34,7 +34,7 @@
 
 To create the CNN model several steps need to be made, from loading the necessary libraries and data to the creation of a sequential CNN and analisys of indicators as accuracy and loss.
 
-The steps will be executed with a Jupyter Notebook file and will follow the order:
+The steps will be executed with a [Jupyter Notebook file ](workbook.ipynb) and will follow the order:
 
 - Step 0 » Importing the necessary python modules and packages
 - Step 1 » Reading, understanding the data
